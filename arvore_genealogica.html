@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Árvore Genealógica</title>
+    <style>
+        .tree ul {
+            padding-top: 20px;
+            position: relative;
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+        }
+
+        .tree li {
+            float: left;
+            text-align: center;
+            list-style-type: none;
+            position: relative;
+            padding: 20px 5px 0 5px;
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+        }
+
+        .tree li::before, .tree li::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 50%;
+            border-top: 1px solid #ccc;
+            width: 50%;
+            height: 20px;
+        }
+
+        .tree li::after {
+            right: auto;
+            left: 50%;
+            border-left: 1px solid #ccc;
+        }
+
+        .tree li:only-child::after, .tree li:only-child::before {
+            display: none;
+        }
+
+        .tree li:only-child {
+            padding-top: 0;
+        }
+
+        .tree li:first-child::before, .tree li:last-child::after {
+            border: 0 none;
+        }
+
+        .tree li:last-child::before {
+            border-right: 1px solid #ccc;
+            border-radius: 0 5px 0 0;
+            -webkit-border-radius: 0 5px 0 0;
+            -moz-border-radius: 0 5px 0 0;
+        }
+
+        .tree li:first-child::after {
+            border-radius: 5px 0 0 0;
+            -webkit-border-radius: 5px 0 0 0;
+            -moz-border-radius: 5px 0 0 0;
+        }
+
+        .tree ul ul::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            border-left: 1px solid #ccc;
+            width: 0;
+            height: 20px;
+        }
+
+        .tree li a {
+            border: 1px solid #ccc;
+            padding: 5px 10px;
+            text-decoration: none;
+            color: #666;
+            font-family: arial, verdana, tahoma;
+            font-size: 11px;
+            display: inline-block;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+        }
+
+        .tree li a:hover, .tree li a:hover + ul li a {
+            background: #c8e4f8;
+            color: #000;
+            border: 1px solid #94a0b4;
+        }
+
+        .tree li a:hover + ul li::after, .tree li a:hover + ul li::before, .tree li a:hover + ul::before, .tree li a:hover + ul ul::before {
+            border-color: #94a0b4;
+        }
+    </style>
+</head>
+<body>
+    <div class="tree">
+        <ul>
+            <li>
+                <a href="#">Mario</a>
+                <ul>
+                    <li>
+                        <a href="#">Lurdes</a>
+                        <ul>
+                            <li><a href="#">Luciani</a></li>
+                            <li><a href="#">Silvio</a></li>
+                            <li><a href="#">Eduardo</a></li>
+                            <li><a href="#">Jose</a></li>
+                            <li><a href="#">Alberto</a></li>
+                            <li><a href="#">Teresa</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Joao</a>
+                        <ul>
+                            <li><a href="#">Antonio</a>
+                                <ul>
+                                    <li><a href="#">Carlos</a>
+                                        <ul>
+                                            <li><a href="#">Júlia</a></li>
+                                            <li><a href="#">Marcos</a>
+                                                <ul>
+                                                    <li><a href="#">Pedro</a>
+                                                        <ul>
+                                                            <li><a href="#">Eduardo</a></li>
+                                                            <li><a href="#">Carla</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="#">Beatriz</a>
+                                                        <ul>
+                                                            <li><a href="#">Sofia</a></li>
+                                                            <li><a href="#">Gabriel</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Ana</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Paulo</a>
+                                <ul>
+                                    <li><a href="#">Ricardo</a>
+                                        <ul>
+                                            <li><a href="#">Bruno</a>
+                                                <ul>
+                                                    <li><a href="#">Felipe</a></li>
+                                                    <li><a href="#">Isabella</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#">Juliana</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Larissa</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Helena</a></li>
+                            <li><a href="#">Roberto</a>
+                                <ul>
+                                    <li><a href="#">Lucas</a>
+                                        <ul>
+                                            <li><a href="#">Gustavo</a>
+                                                <ul>
+                                                    <li><a href="#">Diego</a></li>
+                                                    <li><a href="#">Amanda</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#">Maria Clara</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Laura</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Ana Clara</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Daniel</a>
+                        <ul>
+                            <li><a href="#">Rafael</a>
+                                <ul>
+                                    <li><a href="#">Mateus</a></li>
+                                    <li><a href="#">Mariana</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Carolina</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Raquel</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
