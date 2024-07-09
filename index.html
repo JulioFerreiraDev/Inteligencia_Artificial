@@ -14,20 +14,19 @@
         .tree {
             width: 100%;
             text-align: center;
-            overflow-x: scroll;
+            overflow-x: auto;
             padding: 20px 0;
         }
         .tree ul {
             padding-top: 20px;
             position: relative;
-            display: table;
-            margin: 0 auto;
             transition: all 0.5s;
             -webkit-transition: all 0.5s;
             -moz-transition: all 0.5s;
+            text-align: center;
         }
         .tree li {
-            display: table-cell;
+            display: inline-block;
             text-align: center;
             list-style-type: none;
             position: relative;
@@ -41,17 +40,19 @@
             content: '';
             position: absolute;
             top: 0;
-            right: 50%;
             border-top: 1px solid #ccc;
             width: 50%;
             height: 20px;
         }
         .tree li::after {
-            right: auto;
             left: 50%;
             border-left: 1px solid #ccc;
         }
-        .tree li:only-child::after, .tree li:only-child::before {
+        .tree li::before {
+            right: 50%;
+            border-right: 1px solid #ccc;
+        }
+        .tree li:only-child::before, .tree li:only-child::after {
             display: none;
         }
         .tree li:only-child {
@@ -112,12 +113,96 @@
                     <li>
                         <a href="#">Lurdes</a>
                         <ul>
-                            <li><a href="#">Luciani</a></li>
-                            <li><a href="#">Silvio</a></li>
-                            <li><a href="#">Eduardo</a></li>
-                            <li><a href="#">Jose</a></li>
-                            <li><a href="#">Alberto</a></li>
-                            <li><a href="#">Teresa</a></li>
+                            <li>
+                                <a href="#">Luciani</a>
+                                <ul>
+                                    <li><a href="#">Antonio</a>
+                                        <ul>
+                                            <li><a href="#">Carlos</a>
+                                                <ul>
+                                                    <li><a href="#">Júlia</a></li>
+                                                    <li><a href="#">Marcos</a>
+                                                        <ul>
+                                                            <li><a href="#">Pedro</a>
+                                                                <ul>
+                                                                    <li><a href="#">Eduardo</a></li>
+                                                                    <li><a href="#">Carla</a></li>
+                                                                </ul>
+                                                            </li>
+                                                            <li><a href="#">Beatriz</a>
+                                                                <ul>
+                                                                    <li><a href="#">Sofia</a></li>
+                                                                    <li><a href="#">Gabriel</a></li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#">Ana</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Silvio</a>
+                                        <ul>
+                                            <li><a href="#">Victor</a>
+                                                <ul>
+                                                    <li><a href="#">Leonardo</a></li>
+                                                    <li><a href="#">Sofia</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#">Gabriela</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Eduardo</a>
+                                        <ul>
+                                            <li><a href="#">Fernando</a>
+                                                <ul>
+                                                    <li><a href="#">Pedro</a></li>
+                                                    <li><a href="#">Maria</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#">Julia</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Jose</a>
+                                        <ul>
+                                            <li><a href="#">Caio</a>
+                                                <ul>
+                                                    <li><a href="#">Danilo</a>
+                                                        <ul>
+                                                            <li><a href="#">Felipe</a></li>
+                                                            <li><a href="#">Carolina</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="#">Laura</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#">Elena</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Alberto</a>
+                                        <ul>
+                                            <li><a href="#">Ricardo</a>
+                                                <ul>
+                                                    <li><a href="#">Henrique</a>
+                                                        <ul>
+                                                            <li><a href="#">Joao Pedro</a></li>
+                                                            <li><a href="#">Manuela</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="#">Luiza</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#">Paula</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Teresa</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
                     <li><a href="#">Joao</a>
